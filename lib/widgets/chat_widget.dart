@@ -20,7 +20,7 @@ class ChatWidget extends StatelessWidget {
     return Column(
       children: [
         Material(
-          color: chatIndex == 0 ? scaffoldBackgroundColor : cardColor,
+          color: chatIndex == 0 ? Promptcolor2 : Promptcolor,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -29,7 +29,7 @@ class ChatWidget extends StatelessWidget {
                 Image.asset(
                   chatIndex == 0
                       ? AssetsManager.userImage
-                      : AssetsManager.botImage,
+                      : AssetsManager.AIlogo,
                   height: 30,
                   width: 30,
                 ),
@@ -72,17 +72,7 @@ class ChatWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
                         children: const [
-                          Icon(
-                            Icons.thumb_up_alt_outlined,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Icon(
-                            Icons.thumb_down_alt_outlined,
-                            color: Colors.white,
-                          )
+
                         ],
                       ),
               ],

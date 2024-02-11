@@ -74,23 +74,16 @@ class _ChatScreenState extends State<ChatScreen> {
     final modelsProvider = Provider.of<ModelsProvider>(context);
     final chatProvider = Provider.of<ChatProvider>(context);
     return Scaffold(
-      backgroundColor: AssetsManager.mainbg,
+      backgroundColor:mainbg,
       appBar: AppBar(
-        backgroundColor: AssetsManager.mainbg,
+        backgroundColor:mainbg,
         elevation: 2,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsManager.openaiLogo),
+          child: Image.asset(AssetsManager.AIlogo),
         ),
-        title: const Text("BlossomBlade",style: TextStyle(color: Colors.white),),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () async {
-        //       await Services.showModalSheet(context: context);
-        //     },
-        //     icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
-        //   ),
-        // ],
+        title: const Text("BlossomBlade",style: TextStyle(color: Textcolor),),
+
       ),
       body: SafeArea(
 
@@ -114,7 +107,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             if (_isTyping) ...[
               const SpinKitDancingSquare(
-                color: Colors.white,
+                color: Textcolor,
                 size: 18,
               ),
             ],
@@ -131,7 +124,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: TextField(
 
                         focusNode: focusNode,
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Textcolor),
                         controller: textEditingController,
                         onSubmitted: (value) async {
                           await sendMessageFCT(
@@ -140,7 +133,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         },
                         decoration: const InputDecoration.collapsed(
                             hintText: "How can I help you",
-                            hintStyle: TextStyle(color: Colors.grey)),
+                            hintStyle: TextStyle(color: Textcolor)),
                       ),
                     ),
                     IconButton(
@@ -151,13 +144,13 @@ class _ChatScreenState extends State<ChatScreen> {
                       },
                       icon: const Icon(
                         Icons.send,
-                        color: Colors.white,
+                        color: Textcolor,
                       ),
                     ),
                     IconButton(
                       onPressed: _isListening ? stopListening : startListening,
                       icon: Icon(_isListening ? Icons.mic : Icons.mic_none),
-                      color: Colors.white,
+                      color: Textcolor,
                     ),
                   ],
                 ),
