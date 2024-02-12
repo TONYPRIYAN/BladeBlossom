@@ -229,6 +229,7 @@ class _ChatScreenState extends State<ChatScreen> {
         setState(() {
           _lastWords = result.recognizedWords;
           textEditingController.text = _lastWords;
+
         });
       },
     );
@@ -241,4 +242,3 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() => _isListening = false);
   }
 }
-
